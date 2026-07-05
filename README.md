@@ -35,4 +35,15 @@ app.listen(3000, function () {
 })
 ```
 
-run server with `nodemon server.js` or only `nodemon`
+Run server with `nodemon server.js` or only `nodemon`
+
+Use `ctrl + c` to stop the server from the terminal.
+
+Navigat to `http://localhost:3000/` to view our server 
+
+To print in the server 
+```
+app.get('/', (req, res) => {
+    res.send('<h1>hello world 😜</h1>')
+})
+```
