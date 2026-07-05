@@ -41,9 +41,24 @@ Use `ctrl + c` to stop the server from the terminal.
 
 Navigat to `http://localhost:3000/` to view our server 
 
+### creating a test rout
 To print in the server 
 ```
 app.get('/', (req, res) => {
     res.send('<h1>hello world 😜</h1>')
 })
 ```
+changing the path
+
+```
+app.get('/home', (req, res) => {
+    res.send('<h1>Home page</h1>')
+    // console.log(req)
+})
+app.get('/test', (req, res) => {
+    res.send('<button>responds with text</button>')
+    // console.log(req)
+})
+```
+
+Navigat to `http://localhost:3000/home` or `/test` to view our server 
