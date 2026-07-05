@@ -43,14 +43,14 @@ Navigat to `http://localhost:3000/` to view our server
 
 ### creating a test rout
 To print in the server 
-```
+```js
 app.get('/', (req, res) => {
     res.send('<h1>hello world 😜</h1>')
 })
 ```
 changing the path
 
-```
+```js
 app.get('/home', (req, res) => {
     res.send('<h1>Home page</h1>')
     // console.log(req)
@@ -62,3 +62,15 @@ app.get('/test', (req, res) => {
 ```
 
 Navigat to `http://localhost:3000/home` or `/test` to view our server 
+
+### using request parameters 
+
+```js
+app.get('/greet/:name', (req, res) => {
+    res.send(`<h1>Hello : ${req.params.name}</h1>`)
+    console.log(req.params)
+    // console.log(req)
+})
+```
+
+Navigat to `http://localhost:3000/greet/mohsen` to view our server 
