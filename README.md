@@ -74,3 +74,15 @@ app.get('/greet/:name', (req, res) => {
 ```
 
 Navigat to `http://localhost:3000/greet/mohsen` to view our server 
+
+
+### using request query 
+```js
+//http://localhost:3000/hello/?name=mohsen&age=26
+app.get('/hello', (req,res) => {
+    const name = req.query.name
+    const age = req.query.age
+    res.send(`hello world ${req.query.name} ${req.query.age}`)
+    console.log(req.query)
+})
+```
