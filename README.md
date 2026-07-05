@@ -34,3 +34,5 @@ app.listen(3000, function () {
     console.log('Listening on port 3000')
 })
 ```
+
+run server with `nodemon server.js` or only `nodemon`
