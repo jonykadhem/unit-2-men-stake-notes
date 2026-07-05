@@ -15,17 +15,19 @@
 - creat a directory (mkdir)
 - creat server file `touch server.js`
 - initialize a node project with `npm init -y`
-- install express `npm i express`
+- install express and morgan `npm i express morgan`
 
 ### Write Server Boilerplate 
 
 server.js
 ```js
-// to import express packege to our server
+// to import express packege and morgan to our server
 const express = require('express')
+const morgan = require('morgan')
 
-//to use express
+//to use express & morgan
 const app = express()
+app.use(morgan('dev'))
 
 
 
