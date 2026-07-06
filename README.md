@@ -119,3 +119,15 @@ app.get('/', (req, res) => {
   res.render('fileName.ejs')
 });
  ```
+
+### ejs syntax
+
+to use JS in ejs file use `<% %>`
+```ejs
+<% if(showMessage === false){ %>
+```
+
+to display JS content use `<%= %>`
+```ejs
+ <p>Good Number Is <%= favoriteNumber %></p>
+```
