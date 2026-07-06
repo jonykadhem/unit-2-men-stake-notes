@@ -95,3 +95,27 @@ app.get('/hello', (req,res) => {
     console.log(req.query)
 })
 ```
+### this code is how to render an `Ejs`
+- first inistall `ejs` by `npm i ejs`
+- creat `views` directory
+- creat `fileName.ejs` file
+- add HTML boilerplate with `!`
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+</head>
+<body>
+    <h1>HELLO POTATOS 🥔</h1>
+</body>
+</html>
+```
+- write a render code in the server Ex:
+ ```js
+app.get('/', (req, res) => {
+  res.render('fileName.ejs')
+});
+ ```
