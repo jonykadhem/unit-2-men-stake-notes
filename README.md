@@ -131,3 +131,48 @@ to display JS content use `<%= %>`
 ```ejs
  <p>Good Number Is <%= favoriteNumber %></p>
 ```
+### pass data from the controller 
+use the locals opjects inside the render method
+```js
+res.render('home.ejs', {
+        title: 'home ok',
+})
+```
+now i can use the `title` variable in my `home.ejs` file
+```eja
+<%= title %>
+```
+
+```js
+app.get('/', (req, res) => {
+    res.render('home.ejs', {
+        title: 'home ok',
+        msg: 'mango 🥭',
+        user: 'papa ota',
+        msg2: '༼ つ ◕_◕ ༽つ',
+        player: {
+            name: '( ´･･)ﾉ(._.`)'
+        },
+        inventory: [
+            { name: 'Candle', qty: 4 },
+            { name: 'Cheese', qty: 10 },
+            { name: 'Phone', qty: 1 },
+            { name: 'Tent', qty: 0 },
+            { name: 'Torch', qty: 5 }
+        ],
+        msg3: 'your inventory'
+    })
+});
+```
+
+### using `forEach` in `ejs`
+
+```ejs
+<ul>
+                                                
+      <% inventory.forEach(function(item){ %>
+      <li><%= item.name %></li>
+                                       
+     <% }) %>
+         </ul>
+```
