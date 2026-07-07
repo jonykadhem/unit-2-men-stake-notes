@@ -16,7 +16,7 @@
 - creat server file `touch server.js`
 - creat a `.gitignore`
 - initialize a node project with `npm init -y`
-- install express and morgan `npm i express morgan`
+- install express and morgan `npm i express morgan ejs`
 
 ### Add `node_modules` to `.gitignore`
 .gitignore
@@ -175,4 +175,28 @@ app.get('/', (req, res) => {
                                        
      <% }) %>
          </ul>
+```
+### Creating dynamic links to `show` a page
+```ejs
+<a href='/<%= item.id %>'><%item.name %> </a>
+```
+### nave bar with partials
+we use `<%- include  %>` to linke the partials with our pages 
+```ejs
+<%- include('./patials/nave') %>
+```
+### Adding css to our ejs
+
+- creat a directory named `public`
+- creat a directory insied `public` named `stylesheets`
+- creat a file insied `stylesheets` named `style.cc`
+- add in `server.js`
+```js
+const path = require('path')
+app.use(express.static(path.join(__dirname, "public")))
+```
+
+- link the stylesheets inside `nave.ejs`
+```ejs
+<link rel="stylesheet" href="/stylesheets/style.css">
 ```
