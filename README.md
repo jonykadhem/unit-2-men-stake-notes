@@ -200,3 +200,45 @@ app.use(express.static(path.join(__dirname, "public")))
 ```ejs
 <link rel="stylesheet" href="/stylesheets/style.css">
 ```
+
+## Connecting the mongoose (Mongodb) to the project 
+- downlode env `npm i env`
+- creat a file named `.env`
+- add this to `.env` file
+  `MONGODB_URI=mongodb+srv://jonykadhem_db_user:FCLnVGKSeM3GMQeO@cluster0.smjatlw.mongodb.net/fruits_db?appName=Cluster0`
+
+- creat a directory named `models` with a file inside it.
+- Example on what is insaid the file inside `models`
+
+```js
+const mongoose = require('mongoose')
+
+
+const fruitSchema = new mongoose.Schema({
+    name: String,
+    isReadyToEat: Boolean, 
+})
+
+const Fruit = mongoose.model('Fruit', fruitSchema)
+
+module.exports = Fruit
+```
+
+- in the `server.js` add
+
+```js
+const dns = require("node:dns");
+
+dns.setServers(["8.8.8.8", "1.1.1.1"])
+const dotenv = require('dotenv').config()
+
+const mongoose = require('mongoose')
+const Fruit = require('./models/fruit.js')
+
+mongoose.connect(process.env.MONGODB_URI)
+mongoose.connection.on('connected',()=>{
+    console.log(`connected to mongoDB ${mongoose.connection.name} 🥭`)
+})
+```
+
+
