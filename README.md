@@ -17,6 +17,7 @@
 - creat a `.gitignore`
 - initialize a node project with `npm init -y`
 - install express and morgan `npm i express morgan ejs`
+- install meddil ware `npm i method-override`
 
 ### Add `node_modules` to `.gitignore`
 .gitignore
@@ -240,5 +241,11 @@ mongoose.connection.on('connected',()=>{
     console.log(`connected to mongoDB ${mongoose.connection.name} 🥭`)
 })
 ```
+### adding `method_override` to the `server.js`
+
+```js
+const methodOverride = require('method-override')
 
 
+app.use(methodOverride('_method'))
+```
